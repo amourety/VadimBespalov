@@ -23,5 +23,13 @@ public class ArrayList {
         for(int i = 0; i < count; i++){
             System.out.print(array[i] + " ");
         }
+        System.out.println();
+    }
+    void showSumArray(){
+        int sum = 0;
+        for(int i = 0; i < count; i++){
+            sum+=array[i];
+        }
+        System.out.println("Сумма = " + sum);
     }
 }

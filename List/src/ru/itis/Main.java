@@ -9,5 +9,6 @@ public class Main {
         array.addElement(5);
         array.addElement(6);
         array.showArray();
+        array.showSumArray();
     }
 }
