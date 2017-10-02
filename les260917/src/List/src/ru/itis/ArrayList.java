@@ -5,6 +5,8 @@ package ru.itis;
  * Created by amour on 26.09.2017.
  */
 
+//SHIT VERSION
+
 public class ArrayList {
     int array[] = new int[10];
     int count = 0;
