@@ -1,10 +1,10 @@
 package ru.itis;
 
-import java.util.Scanner;
 
 /**
  * Created by amour on 26.09.2017.
  */
+
 public class ArrayList {
     int array[] = new int[10];
     int count = 0;
