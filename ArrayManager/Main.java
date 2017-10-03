@@ -32,16 +32,19 @@ public class Main {
             String command = scanner.nextLine();
             switch (command) {
                 case CASE_CREATE_ARRAY:
-                    list.create();
+                    list.create(sc.nextInt());
+                    for (int i = 0; i < list.maxCount; i++){
+                        list.add(sc.nextInt());
+                    }
                     break;
                 case CASE_ADD_ELEMENT_TO_THE_END:
-                    list.add();
+                    list.add(sc.nextInt());
                     break;
                 case CASE_REMOVE_ELEMENT:
-                    list.remove();
+                    list.remove(sc.nextInt());
                     break;
                 case CASE_INSERT_ELEMENT:
-                    list.insert();
+                    list.insert(sc.nextInt(), sc.nextInt());
                     break;
                 case CASE_PRINT_ARRAY:
                     list.print();

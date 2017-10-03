@@ -9,29 +9,24 @@ import java.util.Scanner;
 
 public class ArrayList {
     private final static String EXCEPTION = "ARRAY IS NOT CREATED, CREATE AN ARRAY";
-    private static int[] array;
-    private static int maxCount, count;
-    private static Scanner scanner = new Scanner(System.in);
-        public static void create(){
+    private int[] array;
+    private int maxCount, count;
+        public void create(int a){
             System.out.println("ENTER MAXCOUNT FOR ARRAY");
-            maxCount = scanner.nextInt();
-            count = maxCount;
+            maxCount = a;
+            count = 0;
             array = new int[maxCount];
             System.out.println();
-            for (int i = 0; i < maxCount; i++) {
-                array[i] = scanner.nextInt();
-            }
-            System.out.println("ARRAY CREATED");
         }
         public void expand(){
             array = Arrays.copyOf(array, array.length*2);
             maxCount *=2;
             System.out.println("ARRAY EXPANDED");
         }
-        public void add(){
+        public void add(int a){
             if (array != null){
                 if (count != maxCount) {
-                    array[count] = scanner.nextInt();
+                    array[count] = a;
                     count += 1;
                     System.out.println("ELEMENT ADDED");
                 }
@@ -43,9 +38,9 @@ public class ArrayList {
                 System.out.println(EXCEPTION);
             }
         }
-        public void remove(){
+        public void remove(int a){
             if (array != null){
-                int elementPosition = scanner.nextInt()-1;
+                int elementPosition = a - 1;
                 for (int i = elementPosition; i< maxCount -1; i++) {
                     array[i] = array[i+1];
                 }
@@ -55,11 +50,11 @@ public class ArrayList {
                 System.out.println(EXCEPTION);
             }
         }
-        public void insert(){
+        public void insert(int a, int b){
             if (array != null){
                 if (count != maxCount) {
-                    int insertPosition = scanner.nextInt()-1;
-                    int element = scanner.nextInt();
+                    int insertPosition = a-1;
+                    int element = b;
                     for (int i = count - 1; i > insertPosition; i--) {
                         array[i] = array[i - 1];
                     }
