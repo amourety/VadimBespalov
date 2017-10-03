@@ -1,4 +1,4 @@
-package ArrayManager;
+package ArrayManager.front;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -10,6 +10,23 @@ import java.util.Scanner;
 public class ArrayList {
     private final static String EXCEPTION = "ARRAY IS NOT CREATED, CREATE AN ARRAY";
     private int[] array;
+
+    public int getMaxCount() {
+        return maxCount;
+    }
+
+    public void setMaxCount(int maxCount) {
+        this.maxCount = maxCount;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     private int maxCount, count;
         public void create(int a){
             System.out.println("ENTER MAXCOUNT FOR ARRAY");
@@ -32,7 +49,7 @@ public class ArrayList {
                 }
                 else {
                     expand();
-                    add();
+                    add(a);
                 }
             } else {
                 System.out.println(EXCEPTION);
@@ -63,7 +80,7 @@ public class ArrayList {
                     System.out.println("ELEMENT ADDED");
                 } else {
                     expand();
-                    insert();
+                    insert(a,b);
                 }
             } else {
                 System.out.println(EXCEPTION);

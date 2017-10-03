@@ -1,7 +1,5 @@
-package task1.modificators;
+package  task1.modificators;
 
-import task1.modificators.model.car.Car;
-import task1.modificators.model.human.Human;
 
 /**
  * Created by amour on 03.10.2017.

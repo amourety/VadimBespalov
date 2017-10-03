@@ -1,4 +1,4 @@
-package ArrayManager;
+package ArrayManager.front;
 import java.util.Scanner;
 
 /**
@@ -14,7 +14,7 @@ public class Main {
     private final static String CASE_INFO = "INFO";
     // private final static String CASE_CLEAR = "CLEAR"; /* NOT FIXED *\
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         ArrayList list = new ArrayList();
         boolean isTyping = true;
@@ -29,11 +29,11 @@ public class Main {
                 .append("7.INFO - INFO ABOUT COMMANDS");
         System.out.println(sb.toString());
         while (isTyping) {
-            String command = scanner.nextLine();
+            String command = sc.nextLine();
             switch (command) {
                 case CASE_CREATE_ARRAY:
                     list.create(sc.nextInt());
-                    for (int i = 0; i < list.maxCount; i++){
+                    for (int i = 0; i < list.getMaxCount(); i++){
                         list.add(sc.nextInt());
                     }
                     break;
