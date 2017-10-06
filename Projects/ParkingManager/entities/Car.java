@@ -11,9 +11,11 @@ public class Car {
     }
     public void toParking(ParkingPlace parking){
         parking.addCarToParking(this);
+        this.parking = parking;
     }
     public void fromParking(ParkingPlace parking){
         parking.removeCarFromParking(this);
+        this.parking = null;
     }
     public void setParking(ParkingPlace parking) {
         this.parking = parking;
