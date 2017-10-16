@@ -25,5 +25,13 @@ public class Television {
                 count++;
             }
     }
+    public void printSetOfChannel(){
+        int a = 1;
+        for(Channel c: channels){
+            System.out.print(a + ". ");
+            System.out.println(c.getNameChannel());
+            a++;
+        }
+    }
 
 }

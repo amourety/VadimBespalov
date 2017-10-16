@@ -7,17 +7,8 @@ public class Channel {
     private String nameChannel;
     private Broadcast[] broadcasts;
     private final int COUNT = 4;
-    public Channel(int n, String nameChannel){
-        broadcasts = new Broadcast[COUNT];
-        this.nameChannel = nameChannel;
-    }
     public Channel(String nameChannel, Broadcast[] set){
-        broadcasts = new Broadcast[COUNT];
         broadcasts = set;
-
-        for (int i = 0; i < COUNT; i++){
-            broadcasts[i].setNameBroadcast("BROADCAST #" + COUNT);
-        }
         this.nameChannel = nameChannel;
     }
     public String getNameChannel() {
@@ -42,10 +33,10 @@ public class Channel {
         private LocalTime startingTime;
         private LocalTime endingTime;
         private String nameBroadcast = "DEFAULT_BROADCAST";
-        public Broadcast(String broadcastName, int timeBegin, int timeFinish){
+        public Broadcast(LocalTime startTime, LocalTime endTime, String broadcastName){
             setNameBroadcast(broadcastName);
-            setStartingTime(timeBegin);
-            setEndingTime(timeFinish);
+            this.startingTime = startTime;
+            this.endingTime = endTime;
         }
 
         public LocalTime getStartingTime() {
@@ -71,8 +62,13 @@ public class Channel {
         public void setNameBroadcast(String nameBroadcast) {
             this.nameBroadcast = nameBroadcast;
         }
-
     }
 
+    public void printBroadcasts() {
+        for (Channel.Broadcast s : this.getBroadcasts()) {
+            System.out.println(s.getStartingTime().getHour() + ":" + (s.getStartingTime().getMinute() < 10 && s.getStartingTime().getMinute() >= 0 ? ("0" + s.getStartingTime().getMinute()) : s.getStartingTime().getMinute()) + " " + s.getNameBroadcast());
+        }
+        System.out.println();
+    }
 }
 
