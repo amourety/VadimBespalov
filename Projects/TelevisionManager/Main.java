@@ -17,7 +17,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Television tele = Television.getInstance();
         Controler controler = Controler.builder().setTelevision(tele).build();
-        Channel.Broadcast[] set1 = {new Channel.Broadcast(LocalTime.of(21, 0), LocalTime.of(21, 35), "1"),
+        Channel.Broadcast[] set1 = {new Channel.Broadcast(LocalTime.of(0, 1), LocalTime.of(23, 59), "1"),
                 new Channel.Broadcast(LocalTime.of(12, 15), LocalTime.of(15, 0), "2"),
                 new Channel.Broadcast(LocalTime.of(9, 15), LocalTime.of(9, 50), "3"),
                 new Channel.Broadcast(LocalTime.of(10, 55), LocalTime.of(12, 0), "4")};
@@ -31,7 +31,7 @@ public class Main {
         tele.addChannel(new Channel("ECK", set1));
         tele.addChannel(new Channel("DOZHD", set1));
         tele.addChannel(new Channel("E32", set1));
-
+        tele.run();
         tele.printSetOfChannel();
         StringBuilder SB = new StringBuilder().append("COMMAND INFO \n")
                 .append("1. PRINT CHANNELS \n").append("2. PRINT BROADCASTS \n"). append("3. CHANGE CHANNEL \n").append("4. EXIT \n").append("5. INFO");
@@ -63,6 +63,7 @@ public class Main {
 
                 default:
                     System.out.println("Enter INFO");
+                    System.out.println("RUNNING " + tele.getRunningChannel().getNameChannel());
                     break;
             }
         }
