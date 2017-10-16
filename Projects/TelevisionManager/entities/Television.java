@@ -3,12 +3,8 @@ package entities;
 public class Television {
     //singleton TV
         private Channel[] channels;
-        private static final Television instance;
+        private static final Television instance = new Television();
         private int count = 0;
-
-        static {
-            instance = new Television();
-        }
         private Television(){
             channels = new Channel[10];
         }

@@ -37,24 +37,15 @@ public class Controler {
         }
     }
         public void changeChannel(String nameChannel){
-            for(int i = 0; i < tv.getChannels().length; i++){
-                if (nameChannel.equals(tv.getChannels()[i])){
-                    for(int k = 0; k < tv.getChannels()[i].getBroadcasts().length;k++){
-                    if (LocalTime.now().isBefore(tv.getChannels()[i].getBroadcasts()[k].getStartingTime()) && LocalTime.now().isAfter(tv.getChannels()[i].getBroadcasts()[k].getEndingTime())){
-                    System.out.println(tv.getChannels()[i].getNameChannel() + " now " + tv.getChannels()[i].getBroadcasts()[k].getNameBroadcast());
+            for(Channel c: tv.getChannels()){
+                if (nameChannel.equals(c.getNameChannel())){
+                    for (Channel.Broadcast s: c.getBroadcasts()){
+                        if (s.getStartingTime().isBefore(LocalTime.now()) && s.getEndingTime().isAfter(LocalTime.now()))
+                        {
+                        System.out.println(c.getNameChannel() + " running now " + s.getNameBroadcast());
+                        }
                     }
-                    else {
-                        System.err.println("This channer is not works");
-                    }
-
-                    }
-                }
-                else {
-                    System.err.println("This channel is not correct");
                 }
             }
         }
-
-
-
 }
