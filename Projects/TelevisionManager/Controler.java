@@ -50,9 +50,10 @@ public class Controler {
         for(Channel c: tv.getChannels()){
             for (Channel.Broadcast s: c.getBroadcasts()) {
                 if (c.getNameChannel().equals(nameChannel)) {
-                    if (s.getEndingTime().isBefore(LocalTime.now()) && s.getStartingTime().isAfter(LocalTime.now())) {
+                    if (s.getStartingTime().isBefore(LocalTime.now()) && s.getEndingTime().isAfter(LocalTime.now())) {
                         System.out.println(c.getNameChannel() + " running now " + s.getNameBroadcast());
                         tv.setRunningChannel(c);
+                        break;
                     }
                 }
             }
