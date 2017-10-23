@@ -1,4 +1,4 @@
-package entities;
+package works;
 
 import java.time.LocalTime;
 

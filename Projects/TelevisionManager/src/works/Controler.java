@@ -1,4 +1,4 @@
-package entities;
+package works;
 
 import java.time.LocalTime;
 
@@ -6,6 +6,7 @@ import java.time.LocalTime;
 
 public class Controler {
     private String nameConsole;
+    private String firm;
     private Television tv;
 
     public Television getTv() {
@@ -27,14 +28,9 @@ public class Controler {
     }
     public static class Builder {
         private String nameConsole;
+        private String firm;
         private Television tv;
         private Builder() {
-
-        }
-
-        public Builder setNameConsole(String name) {
-            this.nameConsole = name;
-            return this;
         }
 
         public Builder setTelevision(Television television) {
@@ -46,7 +42,7 @@ public class Controler {
             return new Controler(this);
         }
     }
-    public void changeChannel(String nameChannel){
+    public void switchChannel(String nameChannel){
         for(Channel c: tv.getChannels()){
             for (Channel.Broadcast s: c.getBroadcasts()) {
                 if (c.getNameChannel().equals(nameChannel)) {

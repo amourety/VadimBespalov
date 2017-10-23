@@ -1,8 +1,4 @@
-package entities;
-
-import entities.Channel;
-import entities.Controler;
-import entities.Television;
+package works;
 
 import java.time.LocalTime;
 import java.util.Scanner;
@@ -32,6 +28,7 @@ public class Main {
         tele.addChannel(new Channel("DOZHD", set1));
         tele.addChannel(new Channel("E32", set1));
         tele.run();
+        tele.renamer();
         tele.printSetOfChannel();
         StringBuilder SB = new StringBuilder().append("COMMAND INFO \n")
                 .append("1. PRINT CHANNELS \n").append("2. PRINT BROADCASTS \n"). append("3. CHANGE CHANNEL \n").append("4. EXIT \n").append("5. INFO");
@@ -41,7 +38,7 @@ public class Main {
             switch (command){
                 case CASE_CHANGE:
                     System.out.println("Enter a name of channel");
-                    controler.changeChannel(sc.nextLine());
+                    controler.switchChannel(sc.nextLine());
                     break;
 
                 case CASE_PRINT:

@@ -1,4 +1,4 @@
-package entities;
+package works;
 
 public class Television {
     //singleton TV
@@ -51,6 +51,16 @@ public class Television {
             System.out.println("Loading...");
         }
         }
+
+    public void renamer(){
+        for (Channel c: channels){
+            int a = 1;
+            for (Channel.Broadcast b: c.getBroadcasts()){
+                b.setNameBroadcast(c.getNameChannel() + " " + a);
+                a++;
+            }
+        }
+    }
 
     public void setChannels(Channel[] channels) {
         this.channels = channels;
