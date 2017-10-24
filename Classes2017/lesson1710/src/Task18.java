@@ -14,7 +14,7 @@ public class Task18 {
 
             int[] numbers1 = new int[4];
             for (int i = 0; i < 4; i++) {
-                numbers1[i] = number2.charAt(i) - '0';
+                numbers1[i] = number1.charAt(i) - '0';
             }
 
             int[] numbers2 = new int[4];
@@ -37,9 +37,7 @@ public class Task18 {
                 count++;
             }
 
-            System.out.println("Количество быков: " + count);
-        } else {
-            System.err.println("Введите два четырёхзначных числа!");
+            System.out.println(count);
         }
     }
 }

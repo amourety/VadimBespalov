@@ -36,11 +36,7 @@ public class Task19 {
             if (numbers1[3] == numbers2[0] || numbers1[3] == numbers2[1] || numbers1[3] == numbers2[2]) {
                 count++;
             }
-
-            System.out.println("Количество коров: " + count);
-        } else {
-            System.err.println("Введите два четырёхзначных числа!");
+            System.out.println(count);
         }
     }
-
 }
