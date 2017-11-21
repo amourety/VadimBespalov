@@ -9,6 +9,5 @@ public class TractorBelorus extends Transport {
         parkingPlace.addTransportToParking(this);
         this.parking = parkingPlace;
         System.out.println("TRACTOR BELORUS EEE BOY");
-
     }
 }

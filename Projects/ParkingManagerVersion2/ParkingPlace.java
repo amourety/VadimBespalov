@@ -1,3 +1,4 @@
+
 import java.time.LocalTime;
 
 public class ParkingPlace {
@@ -19,7 +20,6 @@ public class ParkingPlace {
                 }
                 parkingTransports[i] = transport;
                 transport.setParking(this);
-
                 System.out.println(transport.getTransportName() + " " + transport.getTransportNumber() + " parked in parking lot <" + getParkingName() + " " + i + ">");
                 count++;
 
