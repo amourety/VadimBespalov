@@ -1,4 +1,4 @@
-package Shapes.Box;
+package shapes.box;
 
 /**
  * Created by amour on 24.10.2017.
@@ -19,6 +19,9 @@ public class Box extends ShapeInSpace {
         this.height = this.height * value;
         this.width = this.width * value;
         this.length = this.length * value;
+    }
+    public double getVolume(){
+        return this.height*this.length*this.width;
     }
 
     public double getHeight() {

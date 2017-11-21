@@ -1,7 +1,4 @@
-package Shapes.Box;
-
-import Shapes.Box.ShapeInSpace;
-
+package shapes.box;
 /**
  * Created by amour on 24.10.2017.
  */
@@ -15,6 +12,9 @@ public class Sphere extends ShapeInSpace {
 
     public void scale(double value){
         this.radius = this.radius * value;
+    }
+    public double getVolume(){
+        return (4/3)* Math.PI *radius*radius*radius;
     }
 
     public double getRadius() {

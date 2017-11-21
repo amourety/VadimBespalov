@@ -1,4 +1,4 @@
-package Shapes.newFigure;
+package shapes.newFigure;
 
 /**
  * Created by amour on 24.10.2017.

@@ -1,9 +1,9 @@
-package Shapes.Box;
+package shapes.box;
 
 /**
  * Created by amour on 24.10.2017.
  */
-public class ShapeInSpace {
+public abstract class ShapeInSpace {
     private double x;
     private double y;
     private double z;
@@ -25,11 +25,12 @@ public class ShapeInSpace {
     public double getZ() {
         return z;
     }
+
     public void move(double x, double y, double z){
         this.x = x;
         this.y = y;
         this.z = z;
     }
-    public void scale(double value){
-    }
+    public abstract void scale(double value);
+    public abstract double getVolume();
 }
